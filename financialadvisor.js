@@ -75,3 +75,18 @@ const financialAdvisor = Object.create(null, {
         }
     }
 })
+
+// Challenge: Fragments and Elements
+// 1. Use document.createElement to build and display an HTML element
+const displayAdvisor = document.createElement("div")
+displayAdvisor.innerHTML = `<h2>${financialAdvisor.name}</h2>
+<p><strong>Company: </strong>${financialAdvisor.company}</p>
+<p><strong>Specialty:</strong> ${financialAdvisor.specialty}</p>`
+document.body.appendChild(displayAdvisor)
+
+// 2. Iterate over the advisor's portfolio and use documents.createDocumentFragment to display some HTML componenets
+// let fragment = document.createDocumentFragment()
+
+// financialAdvisor.portfolio.forEach(stock => {
+//     stockDiv = document.createElement("<div>")
+// })
