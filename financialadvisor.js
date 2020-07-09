@@ -75,5 +75,3 @@ const financialAdvisor = Object.create(null, {
         }
     }
 })
-
-console.log(financialAdvisor.worth())
