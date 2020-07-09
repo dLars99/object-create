@@ -37,7 +37,7 @@ const financialAdvisor = Object.create(null, {
         },
         {
             ticker: "LUV",
-            qty: 1200,
+            qty: 1201,
             price: 35.67,
             buyTransaction: false
         }],
@@ -73,6 +73,15 @@ const financialAdvisor = Object.create(null, {
                 buyTransaction: false
             })
         }
+    },
+
+    // Challenge: Advisor.toString()
+    // Add a toString() method that outputs a specified message
+    toString: {
+        value: function() {
+            const totalWorth = this.worth().toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+            return `${this.name} is an advisor at ${this.company}. Current portfolio value is US$ ${totalWorth}`
+        }
     }
 })
 
@@ -92,3 +101,5 @@ financialAdvisor.portfolio.forEach(stock => {
     stockDiv.innerHTML = stock.buyTransaction ? `Stock: ${stock.ticker}  Value: ${stock.qty * stock.price}` : null
     displayAdvisor.insertAdjacentElement("beforeend",stockDiv)
 })
+
+displayAdvisor.innerHTML += financialAdvisor.toString()
