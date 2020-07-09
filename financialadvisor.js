@@ -87,6 +87,8 @@ document.body.appendChild(displayAdvisor)
 // 2. Iterate over the advisor's portfolio and use documents.createDocumentFragment to display some HTML componenets
 // let fragment = document.createDocumentFragment()
 
-// financialAdvisor.portfolio.forEach(stock => {
-//     stockDiv = document.createElement("<div>")
-// })
+financialAdvisor.portfolio.forEach(stock => {
+    const stockDiv = document.createElement("div")
+    stockDiv.innerHTML = stock.buyTransaction ? `Stock: ${stock.ticker}  Value: ${stock.qty * stock.price}` : null
+    displayAdvisor.insertAdjacentElement("beforeend",stockDiv)
+})
