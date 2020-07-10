@@ -9,3 +9,7 @@ The output will be a string, invoked within a message on an object created, whic
 Financialadvisor.js represents the next three Challenge Exercises. First, an object is created to represent a financial advisor, while limiting which values are writable and enumerable. Then, an index.html was created to answer the second challenge question, which requests rendering
 aspects of the object to the DOM using new dom manipulation methods. The final exercise adds a toString() method to the object, which returns
 a statement requested within the exercise. It also requests specific rendering of a number, which I implemented using a Regular Expression.
+
+Originally, the "worth" method of the FinancialAdvisor object was an ordinary method. The Advanced Challenge, "Calculated Properties," requested
+that be refactored as a getter and setter. As the setter seemed unnecessary, I refactored the method solely as a getter to accomplish the goal
+of the exercise.
