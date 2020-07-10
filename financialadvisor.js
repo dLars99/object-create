@@ -44,12 +44,12 @@ const financialAdvisor = Object.create(null, {
         writable: true
     },
     worth: {
-        value: function() {
+        get: function() {
             return this.portfolio.reduce((acc, cur) => {
                 if (cur.buyTransaction) {
                     return acc + (cur.qty * cur.price)
                 } else {
-                   return acc - (cur.qty * cur.price)
+                return acc - (cur.qty * cur.price)
                 }
             }, 0)
         }
@@ -79,7 +79,7 @@ const financialAdvisor = Object.create(null, {
     // Add a toString() method that outputs a specified message
     toString: {
         value: function() {
-            const totalWorth = this.worth().toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
+            const totalWorth = this.worth.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
             return `${this.name} is an advisor at ${this.company}. Current portfolio value is US$ ${totalWorth}`
         }
     }
