@@ -43,6 +43,8 @@ const financialAdvisor = Object.create(null, {
         }],
         writable: true
     },
+    /* Worth was originally implemented as a method, like purchase and sell below.
+    In response to "Calculated Properties," it was refactored as a 'getter' */
     worth: {
         get: function() {
             return this.portfolio.reduce((acc, cur) => {
